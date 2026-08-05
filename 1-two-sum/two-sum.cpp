@@ -1,4 +1,5 @@
-//Hash Map
+//Hash Map - one pass (passing all values in a single loop) - unnecessary values skipped 
+// two pass would've been passing the values first then fiding the solution
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
