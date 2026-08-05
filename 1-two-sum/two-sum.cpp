@@ -10,10 +10,10 @@ public:
                 if (nums[j] == k){
                     sol.push_back(i);
                     sol.push_back(j);
+                    break;
                 }
             }
         }
-
         return sol;
     }
 };
