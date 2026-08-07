@@ -1,18 +1,19 @@
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
+        int n = nums.size();
+        int l = 0;
+        int r = n-1;
         
-        for (int i=1;i<nums.size(); i++){
-            if (i==nums.size()-1){
-                if (nums[i] != nums[i-1]){
-                    return nums[i];
-                }
-            }
-            if (nums[i] != nums[i-1] && nums[i] != nums[i+1]){
-                return nums[i];
+        while (l<r){
+            int mid =(l+r)/2;
+            if ((mid%2==0 && nums[mid]==nums[mid+1])||(mid%2 == 1 && nums[mid]==nums[mid-1])){
+                l = mid+1;
+            } else {
+                r = mid;
             }
         }
 
-        return nums[0];
+        return nums[l];
     }
 };
