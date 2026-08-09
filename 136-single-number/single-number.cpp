@@ -1,19 +1,11 @@
+//XOR Gate
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        std::sort(nums.begin(),nums.end());
-        int n = nums.size();
-
-        for (int i=1; i<n; i++){
-            if(i == n-1){
-                if(nums[i]!=nums[i-1]){
-                    return nums[i];
-                }
-            }else if ((nums[i]!=nums[i-1])&&(nums[i]!= nums[i+1])){
-                    return nums[i];
-            }
+        int ans = 0;
+        for (auto x:nums){
+            ans = ans^x;
         }
-
-        return nums[0];
+        return ans;
     }
 };
