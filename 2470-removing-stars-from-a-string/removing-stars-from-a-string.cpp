@@ -1,23 +1,15 @@
 class Solution {
 public:
     string removeStars(string s) {
-        std::stack<char> stack;
-
-        for (int i = 0 ;i<s.size(); i++){
-            if (s[i] == '*' and !stack.empty()){
-                stack.pop();
+        string s1 ;
+        for (int i:s){
+            if (!s1.empty() and i == '*'){
+                s1.pop_back();
             } else {
-                stack.push(s[i]);
+                s1.push_back(i);
             }
         }
 
-        std::string s1;
-        int n = stack.size();
-        for (int i =0 ;i<n;i++){
-            s1 += stack.top();
-            stack.pop();
-        }
-        std::reverse(s1.begin(),s1.end());
         return s1;
     }
 };
