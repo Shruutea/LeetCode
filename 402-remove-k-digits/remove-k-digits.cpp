@@ -17,13 +17,14 @@ public:
         }
 
         int m = st.size();
-        string str;
-        for (int i=0 ;i<m ;i++){
-            str += st.top();
+        string str(m,' ');
+        // str.reserve(m);
+        for (int i=m-1 ;i>=0 ;i--){
+            str.at(i) = st.top();
             st.pop();
         }
 
-        reverse(str.begin(),str.end());
+        // reverse(str.begin(),str.end());
 
         int j = 0;
         while (j<m and str.at(j)=='0'){
