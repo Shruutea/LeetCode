@@ -6,22 +6,10 @@ public:
 
         for (int i =0 ;i<n ;i++){
             int curr = num.at(i);
-            while (true){
-                if (k==0){
-                st.push(curr);break;
-                }
-                
-                if (st.empty()){
-                    st.push(curr); break;
-                }
-
-                if (st.top() > curr){
-                    st.pop(); k--;
-                }else{
-                    st.push(curr); 
-                    break;
-                }
+            while (k>0 and !st.empty() and st.top()>curr){
+                st.pop();k--;
             }
+            st.push(curr);
         }
 
         while (k>0 and !st.empty()){
