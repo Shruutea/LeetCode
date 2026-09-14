@@ -1,3 +1,4 @@
+//Note: st.empy() runs faster than st.size()
 class Solution {
 public:
     bool validateStackSequences(vector<int>& pushed, vector<int>& popped) {
