@@ -7,12 +7,12 @@ public:
         for (int i =0 ;i<n ;i++){
             if (i-k >=0 and nums[i-k] == 2)flips --;
             
-            if ((nums[i] + flips) % 2 == 0) {
-    if (i + k > n) return -1; // Only fail if we actually need to flip an out-of-bounds window
-    nums[i] = 2;
-    flips++;
-    ans++;
-}
+            if((nums[i]+flips)%2 == 0){
+                if(i+k>n) return -1;
+                nums[i] = 2;
+                flips++;
+                ans++;
+            }
         }
 
         return ans;
